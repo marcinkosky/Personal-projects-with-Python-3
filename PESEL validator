@@ -79,14 +79,13 @@ def beginning(n):
         pesel_input_validation = False
 
 def leap_year(n):
+    global days_count
     if pesel_input_validation == True:
         n = year_count
-        if n % 4 == 0:
-            days_count[2] += 1
-            if n % 100 == 0 and n % 400 != 0:
-                pass
-    else:
-        pass
+        if (year_count % 4 == 0) and (year_count % 100 != 0) or (year_count % 400 == 0):
+            days_count[2] = 29
+        else:
+            pass
 
 def birth_date(month, day):
     global date_input_validation
