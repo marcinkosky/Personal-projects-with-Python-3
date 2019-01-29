@@ -76,7 +76,7 @@ def beginning(n):
             pesel_input_validation = False
     else:
         print("\nYour PESEL input format '{}' is incorrect.".format(pesel_input))
-        pesel_input_validation = False # to później do wyrzucenia
+        pesel_input_validation = False
 
 def leap_year(n):
     if pesel_input_validation == True:
