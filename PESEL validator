@@ -130,7 +130,7 @@ def pesel_age(n):
 
 
 beginning(pesel_input)
-leap_year(year_count)
+leap_year(pesel_input)
 birth_date(month, day)
 pesel_input_sex(pesel_input)
 pesel_age(pesel_input)
