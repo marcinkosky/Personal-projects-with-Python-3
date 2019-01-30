@@ -35,7 +35,7 @@ def beginning(n):
             pesel_input_validation = True
             s = [int(i) for i in n]
             pesel_control_sum = 9 * int(s[0]) + 7 * int(s[1]) + 3 * int(s[2]) \
-                + 1 * int(s[3]) + 9 * int(s[4]) + 7 * int(n[5]) + 3 * int(s[6])\
+                + 1 * int(s[3]) + 9 * int(s[4]) + 7 * int(n[5]) + 3 * int(s[6]) \
                 + 1 * int(s[7]) + 9 * int(s[8]) + 7 * int(s[9])
             if pesel_control_sum % 10 == int(s[10]):
                 print("\nYour PESEL number {} is correct.".format(pesel_input))
