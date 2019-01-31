@@ -11,4 +11,5 @@ https://pl.wikipedia.org/wiki/PESEL<br />
 *History of changes:*<br />
 29/01/2018 Script is finished<br />
 30/01/2018 Debugging the leap year<br />
-30/01/2018 Formatting the code with standards of PEP8
+30/01/2018 Formatting the code with standards of PEP8<br />
+31/01/2018 Shortening code by 4 lines (formatting and deleting unused parts)
