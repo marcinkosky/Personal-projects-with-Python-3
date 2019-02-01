@@ -6,26 +6,14 @@ print("PESEL number verification. Version 4.3\nType your PESEL number below:")
 pesel_input = input()
 (month, day) = (0, 0)
 
-days_count = {
-    1: 31,
-    2: 28,
-    3: 31,
-    4: 30,
-    5: 31,
-    6: 30,
-    7: 31,
-    8: 31,
-    9: 30,
-    10: 31,
-    11: 30,
-    12: 31
-    }
+days_count = {1: 31, 2: 28, 3: 31, 4: 30, 5: 31, 6: 30,
+              7: 31, 8: 31, 9: 30, 10: 31, 11: 30, 12: 31}
 
 
 def beginning(n):
     pesel_len = len(str(n))
     pesel_diff = abs(pesel_len - 11)
-    global pesel_input_validation, month, day
+    global pesel_input_validation, month, day, year_count
     if pesel_input.isnumeric() is True:
         if pesel_len == 11:
             pesel_input_validation = True
@@ -35,8 +23,7 @@ def beginning(n):
                 + 1 * int(s[7]) + 9 * int(s[8]) + 7 * int(s[9])
             if pesel_control_sum % 10 == int(s[10]):
                 print("\nYour PESEL number {} is correct.".format(pesel_input))
-                year = int(pesel_input[0:2])
-                month = int(pesel_input[2:4])
+                (year, month) = (int(pesel_input[0:2]), int(pesel_input[2:4]))
                 month_index = int(pesel_input[2])
                 day = int(pesel_input[4:6])
                 if (month_index == 0) or (month_index == 1):
@@ -53,7 +40,6 @@ def beginning(n):
                 elif (month_index == 8) or (month_index == 9):
                     year_prefix = 18
                     month -= 80
-                global year_count
                 year_count = year_prefix * 100 + year
                 pesel_input_validation = True
             else:
@@ -77,54 +63,35 @@ def beginning(n):
 
 def leap_year(n):
     if pesel_input_validation is True:
-        n = year_count
-        if (year_count % 4 == 0) and (year_count % 100 != 0) \
-            or (year_count % 400 == 0):
+        if (year_count % 4 == 0) and (year_count % 100 != 0) or (year_count % 400 == 0):
             days_count[2] = 29
-        else:
-            pass
 
 
 def birth_date(month, day):
     global date_input_validation
     if pesel_input_validation is True:
         max_days = days_count.get(month)
-        if max_days is None:
-            max_days = 0
-            print("\tError, invalid number of days. \
-            You can't be born on {}-{}-{}".format(day, month, year_count))
-            date_input_validation = False
-        elif day <= max_days:
-            print("\tYour birth date is {}-{}-{}."
+        if (max_days is not None) and (day <= max_days):
+            print("\a Your birth date is {}-{}-{}."
             .format(day, month, year_count))
             date_input_validation = True
         else:
-            print("\tError, invalid PESEL. You can't be born on {}-{}-{}."
+            print("Error, invalid date. You can't be born on {}-{}-{}."
             .format(day, month, year_count))
             date_input_validation = False
 
 
 def pesel_input_sex(n):
     if (pesel_input_validation is True) and (date_input_validation is True):
-        if (int(n[9]) % 2 == 0) or (int(n[9]) == 0):
-            print("\tYou are a female.")
+        if n[9] in '02468':
+            print("\a You are a female.")
         else:
-            print("\tYou are a male.")
-    else:
-        pass
-
+            print("\a You are a male.")
 
 def pesel_age(n):
     if (pesel_input_validation is True) and (date_input_validation is True):
-        n = year_count
         current_year = int(date.today().year)
-        print("\tYou are {} years old.".format(current_year - year_count))
-    else:
-        pass
+        print("\a You are {} years old.".format(current_year - year_count))
 
-
-beginning(pesel_input)
-leap_year(pesel_input)
-birth_date(month, day)
-pesel_input_sex(pesel_input)
-pesel_age(pesel_input)
+beginning(pesel_input), leap_year(pesel_input), 
+birth_date(month, day), pesel_input_sex(pesel_input), pesel_age(pesel_input)
