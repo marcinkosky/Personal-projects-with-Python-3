@@ -13,5 +13,8 @@ https://pl.wikipedia.org/wiki/PESEL<br />
 30/01/2018 Debugging the leap year<br />
 30/01/2018 Formatting the code with standards of PEP8<br />
 31/01/2018 Shortening code by 4 lines (formatting and deleting unused parts)<br />
-01/02/2018 Shortening code by 34 lines (deleting unused parts, concentrating strings)
-*-- end of changes --*
+01/02/2018 Shortening code by 34 lines (deleting unused parts, concentrating strings)<br />
+*-- end of changes --*<br />
+<br />
+
+**More projects soon**
