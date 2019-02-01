@@ -2,8 +2,7 @@
 import sys
 from datetime import date
 
-print("PESEL number verification. Version 4.3")
-print("Type your PESEL number:")
+print("PESEL number verification. Version 4.3\nType your PESEL number below:")
 pesel_input = input()
 (month, day) = (0, 0)
 
