@@ -96,4 +96,4 @@ if pesel_input_validation:
     birth_date(month, day)
     if date_input_validation:
         pesel_input_sex(pesel_input)
-pesel_age(pesel_input)
+        pesel_age(pesel_input)
