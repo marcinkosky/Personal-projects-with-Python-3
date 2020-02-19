@@ -19,6 +19,7 @@ https://pl.wikipedia.org/wiki/PESEL<br />
 
 
 **Greatest common divisor**
+
 Program is running with methods and functions, without using euclid_algo().
 
 
