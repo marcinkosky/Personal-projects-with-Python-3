@@ -25,6 +25,7 @@ Program is running with methods and functions, without using euclid_algo().
 
 *History of changes:*<br />
 19/02/2020 Script is finished<br />
+<br />
 
 
 **Least common multiple**
@@ -33,5 +34,6 @@ Program is running with methods and functions, without using euclid_algo().
 
 *History of changes:*<br />
 19/02/2020 Script is finished<br />
+<br />
 
 **More projects soon**
