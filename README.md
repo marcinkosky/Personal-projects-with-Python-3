@@ -27,8 +27,7 @@ Program is running with methods and functions, without using euclid_algo().
 19/02/2020 Script is finished<br />
 
 
-**Least common multiple
-**
+**Least common multiple**
 
 Program is running with methods and functions, without using euclid_algo().
 
